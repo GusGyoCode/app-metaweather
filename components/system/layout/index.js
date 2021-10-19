@@ -1,20 +1,18 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Layout({titlePage, children}) {
   return (
     <>
       <Head>
-        <title>inicio</title>
+        <title>{titlePage}</title>
         <meta charset="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Link href="weather">
-        <a className="text-gray-500">
-          ir weather app
-        </a>
-      </Link>
+      <div className="w-full">
+        {children}
+      </div>
     </>
   )
 }
