@@ -1,7 +1,15 @@
+import axios from 'axios'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export default function Home () {
+  useEffect(() => {
+    axios.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/44418/').then(response => {
+      console.log(response)
+    })
+  }, [])
+
   return (
     <>
       <Head>
