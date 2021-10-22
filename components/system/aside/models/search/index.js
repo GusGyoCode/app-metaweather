@@ -7,9 +7,9 @@ export default function Search ({ handleFunction }) {
         <button onClick={handleFunction}><i className="icon-cancel text-2xl"></i></button>
       </div>
       <div className="p-4 flex flex-wrap items-center justify-between">
-        <div className="w-9/12 border-solid border-gray-400 border rounded-md">
-          <i className="icon-search text-2xl text-gray-300"></i>
-          <input type="text" className="p-2 mr-3 w-10/12 bg-transparent focus:outline-none text-black dark:text-white"/>
+        <div className="w-9/12 border-solid border-gray-400 border rounded-md flex flex-wrap">
+          <i className="icon-search text-2xl text-gray-300 w-2/12"></i>
+          <input type="text" className="p-2 w-10/12 bg-transparent focus:outline-none text-black dark:text-white"/>
         </div>
         <Link href="/">
           <a className="w-2/12 p-2 bg-blue-light dark:bg-blue-400 text-center rounded-md text-white hover:bg-blue-light-hover dark:hover:bg-blue-300 transition duration-500">
