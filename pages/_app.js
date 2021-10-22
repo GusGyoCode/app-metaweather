@@ -1,8 +1,11 @@
-import '../styles/globals.css'
+import GlobalStateProvider from '../context/global/GlobalStateProvider'
+import '../styles/css/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
-  return getLayout(<Component {...pageProps} />)
+  return <GlobalStateProvider>
+    {getLayout(<Component {...pageProps} />)}
+  </GlobalStateProvider>
 }
 
 export default MyApp
