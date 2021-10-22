@@ -1,16 +1,16 @@
 // import { useContext } from "react";
 // import Context from "../../../context/global/context";
-import Nube from "../../icons/nube";
-import Image from "next/image";
+import Nube from '../../icons/nube'
+// import Image from 'next/image'
 
-export default function Aside() {
+export default function Aside () {
   // const {isDark, setIsDark} = useContext(Context)
   // {isDark === 'dark' ? <li><button onClick={() => setIsDark('ligth') }>Visitar Sitio en Ingles</button></li> : <li><button onClick={() => setIsDark('dark')}>Visit Website in Spanish</button></li>}
 
-  if (typeof window !== "undefined") {
-    navigator.geolocation.watchPosition(function showPosition(position) {
-      console.log(position.coords.latitude, position.coords.longitude);
-    });
+  if (typeof window !== 'undefined') {
+    navigator.geolocation.watchPosition(function showPosition (position) {
+      console.log(position.coords.latitude, position.coords.longitude)
+    })
   }
 
   return (
@@ -53,5 +53,5 @@ export default function Aside() {
         <h4 className="text-xl font-light text-center"><i className="icon-location"></i> Helsinki</h4>
       </div>
     </aside>
-  );
+  )
 }

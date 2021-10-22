@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
-export default function Layout({titlePage, children}) {
+export default function Layout ({ titlePage, children }) {
   return (
     <>
       <Head>

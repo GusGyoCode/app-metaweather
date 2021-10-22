@@ -1,4 +1,4 @@
-import System from "../../components/system"
+import System from '../../components/system'
 
 export default function weather () {
   return (

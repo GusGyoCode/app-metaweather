@@ -7,10 +7,10 @@ module.exports = {
         'morado-azulado': '#1E213A',
         'morado-oscuro': '#100E1D'
       }
-    },
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }

@@ -1,6 +1,6 @@
-import * as React from "react"
+import * as React from 'react'
 
-export default function Nube(props) {
+export default function Nube (props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
