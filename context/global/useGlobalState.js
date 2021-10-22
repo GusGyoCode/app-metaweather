@@ -20,15 +20,10 @@ const initialStateTranslate = () => {
     }
   }
 }
-const initialStateTheme = () => {
-  if (storage.getItem('isDark')) {
-    return storage.getItem('isDark')
-  } return 'dark'
-}
 
 const useGlobalState = () => {
   const [language, setLanguage] = useState(initialStateTranslate)
-  const [isDark, setIsDark] = useState(initialStateTheme)
+  const [isDark, setIsDark] = useState('dark')
 
   const handleTranslate = e => {
     storage.setItem('language', e)
@@ -40,7 +35,6 @@ const useGlobalState = () => {
   useEffect(() => {
     handleTranslate(language)
     handleTheme(isDark)
-    console.log(isDark)
   }, [language, isDark])
 
   return { language, setLanguage, isDark, setIsDark }
