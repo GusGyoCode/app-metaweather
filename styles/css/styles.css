@@ -1,3 +1,12 @@
 .style_sidenavScrollbar__3m::-webkit-scrollbar {
   display: none;
 }
+.style_main__1l::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+.style_main__1l::-webkit-scrollbar-thumb {
+  background: rgba(184, 185, 190, 0.712);
+  border-radius: 10px;
+}
