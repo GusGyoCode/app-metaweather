@@ -1,7 +1,7 @@
 export default function Main () {
   return (
-    <main className="w-full lg:w-3/4 h-screen bg-morado-oscuro overflow-hidden overflow-y-auto pt-2 style_main__1l">
-      <div className="flex justify-between items-center pt-4 max-w-screen-xl mx-auto">
+    <main className="w-full lg:w-3/4 lg:h-screen bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l">
+      <div className="flex justify-between items-center pt-4 max-w-screen-xl mx-auto px-4 ">
         <div>
         </div>
         <div>
@@ -10,8 +10,8 @@ export default function Main () {
           <button className="text-white bg-gray-400 rounded-full p-4 leading-none font-bold text-xl hover:bg-gray-300 transition duration-500"><i className="icon-bookmark block h-5 w-5 flex justify-center items-center"></i></button>
         </div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 max-w-screen-xl mx-auto py-8">
-        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-8">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 max-w-screen-xl mx-auto py-8 px-4 ">
+        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-4">
           <h2 className="text-xl mb-4 text-white">Tomorrow</h2>
           <img
             src="https://www.metaweather.com/static/img/weather/s.svg"
@@ -20,7 +20,7 @@ export default function Main () {
           />
           <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-white">16°C</span><span>11°C</span></div>
         </div>
-        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-8">
+        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-4">
           <h2 className="text-xl mb-4 text-white">Tomorrow</h2>
           <img
             src="https://www.metaweather.com/static/img/weather/s.svg"
@@ -29,7 +29,7 @@ export default function Main () {
           />
           <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-white">16°C</span><span>11°C</span></div>
         </div>
-        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-8">
+        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-4">
           <h2 className="text-xl mb-4 text-white">Tomorrow</h2>
           <img
             src="https://www.metaweather.com/static/img/weather/s.svg"
@@ -38,7 +38,7 @@ export default function Main () {
           />
           <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-white">16°C</span><span>11°C</span></div>
         </div>
-        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-8">
+        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-4">
           <h2 className="text-xl mb-4 text-white">Tomorrow</h2>
           <img
             src="https://www.metaweather.com/static/img/weather/s.svg"
@@ -48,7 +48,7 @@ export default function Main () {
           <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-white">16°C</span><span>11°C</span></div>
         </div>
 
-        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-8">
+        <div className="w-full rounded-xl flex flex-wrap flex-col justify-center items-center bg-morado-azulado text-gray-400 p-2 md:p-8 lg:p-2 xl:p-4">
           <h2 className="text-xl mb-4 text-white">Tomorrow</h2>
           <img
             src="https://www.metaweather.com/static/img/weather/s.svg"
@@ -58,9 +58,9 @@ export default function Main () {
           <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-white">16°C</span><span>11°C</span></div>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-auto text-white mb-4">
+      <div className="max-w-screen-xl mx-auto text-white mb-4 px-4 ">
         <h2 className="text-3xl font-semibold">Today&apos;s Hightlights</h2>
-        <div className="grid grid-cols-2 gap-8 w-full py-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full py-4">
           <div className="p-4 pb-8 rounded-xl flex flex-col bg-morado-azulado justify-center items-center">
             <h2 className="text-2xl pb-4">Wind Status</h2>
             <h3 className="text-6xl pb-8">7<span className="text-4xl">mph</span></h3>
@@ -90,7 +90,14 @@ export default function Main () {
           </div>
         </div>
       </div>
-
+      <footer className="w-full py-4 flex flex-wrap justify-center items-center">
+          <h2 className="text-gray-400 font-semibold w-full text-center">created by GusGyoCode - GusGyoCode.dev</h2>
+          <div className="w-full flex justify-center items-center text-gray-300"><i className="icon-github-squared text-xl"></i>
+            <i className="icon-linkedin-squared text-xl"></i>
+            <i className="icon-facebook-squared text-xl"></i>
+            <i className="icon-twitter-squared text-xl"></i>
+            <i className="icon-instagram-filled text-lg"></i></div>
+      </footer>
     </main>
   )
 }
