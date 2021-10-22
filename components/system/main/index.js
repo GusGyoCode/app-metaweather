@@ -5,7 +5,7 @@ export default function Main () {
   const { isDark, setIsDark } = useContext(Context)
 
   return (
-    <main className="w-full lg:w-3/4 lg:h-screen bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l">
+    <main className="w-full lg:w-3/4 lg:h-screen bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l transition duration-300">
       <div className="flex justify-between items-center pt-4 max-w-screen-xl mx-auto px-4 ">
         <div className="invisible lg:visible">
         {

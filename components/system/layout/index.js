@@ -6,7 +6,9 @@ import Context from '../../../context/global/context'
 export default function Layout ({ titlePage, children }) {
   const { isDark, setIsDark } = useContext(Context)
   useEffect(() => {
-    setIsDark(storage.getItem('isDark'))
+    if (storage.getItem('isDark')) {
+      setIsDark(storage.getItem('isDark'))
+    }
   }, [])
   return (
     <>
@@ -16,7 +18,6 @@ export default function Layout ({ titlePage, children }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      {console.log('hola')}
       <div className={isDark === 'dark' ? 'dark' : ''}>
         <div className='w-full flex flex-wrap'>
           {children}
