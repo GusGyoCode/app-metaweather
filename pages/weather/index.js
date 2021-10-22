@@ -1,7 +1,16 @@
+import System from '../../components/system'
+
 export default function weather () {
   return (
     <>
-    <h1>buscar clima</h1>
     </>
+  )
+}
+
+weather.getLayout = function getLayout (page) {
+  return (
+    <System titlePage="Weather">
+      {page}
+    </System>
   )
 }

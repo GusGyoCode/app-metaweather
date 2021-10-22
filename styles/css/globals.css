@@ -1,12 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "fontello.css";
+@import "styles.css";
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: #100E1D;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(184, 185, 190, 0.712);
+  border-radius: 10px;
 }
 * {
   box-sizing: border-box;
