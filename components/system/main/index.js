@@ -1,8 +1,22 @@
+import { useContext } from 'react'
+import Context from '../../../context/global/context'
+
 export default function Main () {
+  const { isDark, setIsDark } = useContext(Context)
+
   return (
     <main className="w-full lg:w-3/4 lg:h-screen bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l">
       <div className="flex justify-between items-center pt-4 max-w-screen-xl mx-auto px-4 ">
-        <div>
+        <div className="invisible lg:visible">
+        {
+          isDark === 'dark'
+            ? <button onClick={() => { setIsDark('light') }} className="bg-gray-400 text-white p-4 rounded-full hover:bg-gray-300 transition duration-500">
+              <i className="icon-sun text-xl block h-5 w-5 flex justify-center items-center"></i>
+            </button>
+            : <button onClick={() => { setIsDark('dark') }} className="bg-gray-400 text-white p-4 rounded-full hover:bg-gray-300 transition duration-500">
+              <i className="icon-moon text-xl block h-5 w-5 flex justify-center items-center"></i>
+            </button>
+        }
         </div>
         <div>
           <button className="text-white bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-gray-300 transition duration-500">°C</button>
