@@ -4,7 +4,7 @@ export default function Search ({ handleFunction }) {
   return (
     <div className="w-full fixed lg:relative overflow-hidden overflow-y-auto top-0 left-0 h-screen bg-white dark:bg-morado-azulado style_sidenavScrollbar__3m">
       <div className="flex justify-end items-center p-4">
-        <button onClick={handleFunction}><i className="icon-cancel text-2xl"></i></button>
+        <button onClick={handleFunction}><i className="icon-cancel text-2xl dark:text-white"></i></button>
       </div>
       <div className="p-4 flex flex-wrap items-center justify-between">
         <div className="w-9/12 border-solid border-gray-400 border rounded-md flex flex-wrap">
