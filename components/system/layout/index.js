@@ -1,10 +1,13 @@
 import storage from 'local-storage-fallback'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import Context from '../../../context/global/context'
+import Notification from '../notification'
 
 export default function Layout ({ titlePage, children }) {
-  const { isDark, setIsDark } = useContext(Context)
+  const { isDark, setIsDark, validation, error, setValidation, setError } = useContext(Context)
+  const router = useRouter()
   useEffect(() => {
     if (storage.getItem('isDark')) {
       setIsDark(storage.getItem('isDark'))
@@ -20,6 +23,8 @@ export default function Layout ({ titlePage, children }) {
       </Head>
       <div className={isDark === 'dark' ? 'dark' : ''}>
         <div className='w-full flex flex-wrap'>
+          {validation ? <Notification text="Please fill in the fields to search for a place" handleFuntion={() => { setValidation(false); setError(false) }}/> : <></>}
+          {error ? <Notification text="Please verify that the city entered is in the selected country" handleFuntion={() => { setError(false); router.push('/weather/') }}/> : <></>}
           {children}
         </div>
       </div>

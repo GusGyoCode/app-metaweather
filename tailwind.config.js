@@ -9,7 +9,9 @@ module.exports = {
         'gray-bg': '#ECF1F4',
         'blue-oscuro': '#2B353B',
         'blue-light': '#00C4F5',
-        'blue-light-hover': '#54DDFF'
+        'blue-light-hover': '#54DDFF',
+        'loading-blue': '#e5e6e6',
+        'loading-blue-dark': '#292C44'
       }
     }
   },
