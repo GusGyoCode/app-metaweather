@@ -1,6 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
+export async function getServerSideProps (constext) {
+  const { res } = constext
+  res.writeHead(301, { location: '/weather/' }).end()
+  return {
+    props: {
+    }
+  }
+}
+
 export default function Home () {
   return (
     <>
