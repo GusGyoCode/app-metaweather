@@ -74,35 +74,6 @@ export default function InfoAside ({ handleFunction }) {
       </>
       )
     }
-
-    // : data.length === 1
-    //   ? <div className="flex flex-wrap justify-center items-center animate-pulse px-4">
-    //     {isDark === 'dark'
-    //       ? <Nube
-    //           fill="#292C44"
-    //           className="w-64 h-64 pb-12"
-    //         />
-    //       : <Nube
-    //         fill="#e5e6e6"
-    //         className="w-64 h-64 pb-12"
-    //       />
-    //     }
-    //     <div className="w-full grid grid-cols-1 gap-10 md:gap-20 pb-8">
-    //       <div className="w-full flex justify-center">
-    //         <div className="bg-loading-blue dark:bg-loading-blue-dark p-12 rounded-full w-1/2"></div>
-    //       </div>
-    //       <div className="w-full flex justify-center">
-    //         <div className="bg-loading-blue dark:bg-loading-blue-dark p-5 rounded-full w-1/2"></div>
-    //       </div>
-    //       <div className="w-full flex justify-center">
-    //         <div className="bg-loading-blue dark:bg-loading-blue-dark p-3 rounded-full w-1/2"></div>
-    //       </div>
-    //       <div className="w-full flex justify-center">
-    //         <div className="bg-loading-blue dark:bg-loading-blue-dark p-3 rounded-full w-1/2"></div>
-    //       </div>
-    //     </div>
-    //   </div>
-    //   :
   }
 
   return (

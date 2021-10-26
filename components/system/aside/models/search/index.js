@@ -1,18 +1,24 @@
 import { countries } from 'countries-list'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import Context from '../../../../../context/global/context'
 
 export default function Search ({ handleFunction }) {
   const [search, setSearch] = useState('')
   const [select, SetSelect] = useState('')
   const [countriess, setCountries] = useState([])
   const router = useRouter()
+  const { setValidation, validation } = useContext(Context)
 
   const handleSubmit = e => {
     e.preventDefault()
-    router.push(`/weather/city/${search}&${select}`)
-    handleFunction()
+    if (search === '' || select === '') {
+      setValidation(!validation)
+    } else {
+      router.push(`/weather/city/${search}&${select}`)
+      handleFunction()
+    }
   }
 
   useEffect(() => {
