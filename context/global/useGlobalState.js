@@ -24,6 +24,7 @@ const initialStateTranslate = () => {
 const useGlobalState = () => {
   const [language, setLanguage] = useState(initialStateTranslate)
   const [isDark, setIsDark] = useState('dark')
+  const [data, setData] = useState([])
 
   const handleTranslate = e => {
     storage.setItem('language', e)
@@ -37,7 +38,7 @@ const useGlobalState = () => {
     handleTheme(isDark)
   }, [language, isDark])
 
-  return { language, setLanguage, isDark, setIsDark }
+  return { language, setLanguage, isDark, setIsDark, data, setData }
 }
 
 export default useGlobalState
