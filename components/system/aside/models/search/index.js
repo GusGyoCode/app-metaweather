@@ -9,7 +9,7 @@ export default function Search ({ handleFunction }) {
   const [select, SetSelect] = useState('')
   const [countriess, setCountries] = useState([])
   const router = useRouter()
-  const { setValidation, validation } = useContext(Context)
+  const { setValidation, validation, savedLocations } = useContext(Context)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -46,17 +46,24 @@ export default function Search ({ handleFunction }) {
       </select>
 
       </form>
-      <div className="p-4">
-        <ul className="w-full dark:text-white text-blue-oscuro">
-          <li className="w-full">
-            <Link href="/">
-              <a className="p-4 border border-solid border-transparent hover:border-gray-400 text-2xl transition duration-500 w-full block flex justify-between">
-                London
-                <i className="icon-arrow-right"></i>
-              </a>
-            </Link>
-          </li>
+      <div className="p-4 h-full">
+        {savedLocations.length !== 0
+          ? <ul className="w-full dark:text-white text-blue-oscuro">
+          {savedLocations.map(locations => (
+            <li className="w-full" key={locations}>
+              <Link href={`/weather/city/${locations}`}>
+                <a className="p-4 border border-solid border-transparent hover:border-gray-400 text-2xl transition duration-500 w-full block flex justify-between" onClick={handleFunction}>
+                  {(locations.split('&'))[0]}
+                  <i className="icon-arrow-right"></i>
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
+          : <div className="flex flex-col justify-center h-5/6 items-center px-4 text-gray-400">
+          <i className="icon-bookmark text-9xl"></i>
+          <h3 className="mt-12 text-2xl text-center font-semibold">Search for a city and save it so that you can make your search easier in the future</h3>
+        </div>}
       </div>
     </div>
   )
