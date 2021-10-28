@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { useContext, useEffect } from 'react'
 import System from '../../../components/system'
 import Context from '../../../context/global/context'
+import ipstack from 'ipstack'
 
 export async function getServerSideProps (constext) {
   const { params } = constext
@@ -35,10 +36,8 @@ export default function locations ({ extendInfo, errorr }) {
   const { id } = router.query
   useEffect(() => {
     axios.get('https://ipapi.co/json/').then(response => {
-      console.log(response)
-      axios.get(`http://geoplugin.net/json.gp?ip=${response.data.ip}`).then(responses => {
-        console.log(responses)
-        axios.get(`${process.env.API_URL}weather?q=${responses.data.geoplugin_city},${responses.data.geoplugin_countryCode}&units=metric&appid=${process.env.API_KEY}`).then(responsess => {
+      ipstack(response.data.ip, 'd68c081c3cd675c3311f9d7d27779a77', (err, responsesss) => {
+        axios.get(`${process.env.API_URL}weather?q=${responsesss.city},${responsesss.country_code}&units=metric&appid=${process.env.API_KEY}`).then(responsess => {
           if (responsess.status === 200) {
             errorr ? setError(!error) : setData([responsess.data, extendInfo])
           } else {
@@ -49,6 +48,9 @@ export default function locations ({ extendInfo, errorr }) {
             setError(!error)
           }
         })
+        if (err) {
+          setError(!error)
+        }
       })
     })
     setSavedLocations([...savedLocations, id])
