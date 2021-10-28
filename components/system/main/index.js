@@ -4,7 +4,7 @@ import Context from '../../../context/global/context'
 import Nube from '../../icons/nube'
 
 export default function Main () {
-  const { isDark, setIsDark, data } = useContext(Context)
+  const { isDark, setIsDark, data, convertTemp, setConvertTemp } = useContext(Context)
 
   return (
     <main className="w-full lg:w-3/4 lg:h-screen bg-gray-bg dark:bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l transition duration-300">
@@ -139,8 +139,8 @@ export default function Main () {
             }
             </div>
             <div>
-              <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500">°C</button>
-              <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500">°F</button>
+              <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500" onClick={() => { setConvertTemp(false) }}>°C</button>
+              <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500" onClick={() => { setConvertTemp(true) }}>°F</button>
               <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500"><i className="icon-bookmark block h-5 w-5 flex justify-center items-center"></i></button>
             </div>
         </div>
@@ -153,7 +153,7 @@ export default function Main () {
             alt="nube"
             className="w-20 h-20"
           />
-          <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-gray-700 dark:text-white">{daily.temp.max.toFixed(0)}°C</span><span>{daily.temp.min.toFixed(0)}°C</span></div>
+          <div className="flex justify-between items-center w-8/12 lg:w-10/12 2xl:w-8/12"><span className="text-gray-700 dark:text-white">{convertTemp ? ((daily.temp.max * 1.8) + 32).toFixed(0) + '°F' : daily.temp.max.toFixed(0) + '°C'}</span><span>{convertTemp ? ((daily.temp.min * 1.8) + 32).toFixed(0) + '°F' : daily.temp.min.toFixed(0) + '°C'}</span></div>
         </div>
         ))}
       </div>

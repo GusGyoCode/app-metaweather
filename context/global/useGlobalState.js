@@ -27,6 +27,7 @@ const useGlobalState = () => {
   const [data, setData] = useState([])
   const [validation, setValidation] = useState(false)
   const [error, setError] = useState(false)
+  const [convertTemp, setConvertTemp] = useState(false)
 
   const handleTranslate = e => {
     storage.setItem('language', e)
@@ -40,7 +41,7 @@ const useGlobalState = () => {
     handleTheme(isDark)
   }, [language, isDark])
 
-  return { language, setLanguage, isDark, setIsDark, data, setData, validation, setValidation, error, setError }
+  return { language, setLanguage, isDark, setIsDark, data, setData, validation, setValidation, error, setError, convertTemp, setConvertTemp }
 }
 
 export default useGlobalState
