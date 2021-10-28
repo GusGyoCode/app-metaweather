@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import System from '../../../components/system'
 import Context from '../../../context/global/context'
 
@@ -30,7 +30,7 @@ export async function getServerSideProps (constext) {
 }
 
 export default function locations ({ extendInfo, errorr }) {
-  const { setData, setError, error, savedLocations, setSavedLocations, data } = useContext(Context)
+  const { setData, setError, error, savedLocations, setSavedLocations } = useContext(Context)
   const router = useRouter()
   const { id } = router.query
   useEffect(() => {
