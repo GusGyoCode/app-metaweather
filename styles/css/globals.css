@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "fontello.css";
 @import "styles.css";
+@import "hint.min.css";
 html,
 body {
   padding: 0;

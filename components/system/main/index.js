@@ -2,9 +2,10 @@ import { useContext } from 'react'
 import moment from 'moment'
 import Context from '../../../context/global/context'
 import Nube from '../../icons/nube'
+import storage from 'local-storage-fallback'
 
 export default function Main () {
-  const { isDark, setIsDark, data, convertTemp, setConvertTemp } = useContext(Context)
+  const { isDark, setIsDark, data, convertTemp, setConvertTemp, savedLocations } = useContext(Context)
 
   return (
     <main className="w-full lg:w-3/4 lg:h-screen bg-gray-bg dark:bg-morado-oscuro lg:overflow-hidden lg:overflow-y-auto pt-2 style_main__1l transition duration-300">
@@ -141,7 +142,7 @@ export default function Main () {
             <div>
               <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500" onClick={() => { setConvertTemp(false) }}>°C</button>
               <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl mr-4 hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500" onClick={() => { setConvertTemp(true) }}>°F</button>
-              <button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500"><i className="icon-bookmark block h-5 w-5 flex justify-center items-center"></i></button>
+              <button onClick={() => { storage.setItem('locations', JSON.stringify(savedLocations)) }}><button className="text-white bg-blue-light dark:bg-gray-400 rounded-full p-4 leading-none font-bold text-xl hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 hint--bottom-left hint--rounded hint--bounce hint--medium" aria-label="Saved location" ><i className="icon-bookmark block h-5 w-5 flex justify-center items-center"></i></button></button>
             </div>
         </div>
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 max-w-screen-xl mx-auto py-8 px-4 ">

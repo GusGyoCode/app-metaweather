@@ -6,7 +6,7 @@ export default function weather () {
   const { setData } = useContext(Context)
   useEffect(() => {
     setData([])
-  })
+  }, [])
   return (
     <System titlePage="Weather">
     </System>
