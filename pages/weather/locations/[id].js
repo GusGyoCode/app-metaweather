@@ -35,7 +35,9 @@ export default function locations ({ extendInfo, errorr }) {
   const { id } = router.query
   useEffect(() => {
     axios.get('https://ipapi.co/json/').then(response => {
+      console.log(response)
       axios.get(`http://geoplugin.net/json.gp?ip=${response.data.ip}`).then(responses => {
+        console.log(responses)
         axios.get(`${process.env.API_URL}weather?q=${responses.data.geoplugin_city},${responses.data.geoplugin_countryCode}&units=metric&appid=${process.env.API_KEY}`).then(responsess => {
           if (responsess.status === 200) {
             errorr ? setError(!error) : setData([responsess.data, extendInfo])
