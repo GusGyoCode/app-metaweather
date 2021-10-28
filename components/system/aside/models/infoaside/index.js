@@ -1,10 +1,12 @@
 import moment from 'moment'
+import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import Context from '../../../../../context/global/context'
 import Nube from '../../../../icons/nube'
 
 export default function InfoAside ({ handleFunction }) {
   const { isDark, setIsDark, data, convertTemp } = useContext(Context)
+  const router = useRouter()
   function infoAsideData () {
     if (data.length === 0) {
       return (
@@ -76,6 +78,14 @@ export default function InfoAside ({ handleFunction }) {
     }
   }
 
+  function handleLocations () {
+    if (typeof window !== 'undefined') {
+      navigator.geolocation.getCurrentPosition(function showPosition (position) {
+        router.push(`/weather/locations/${position.coords.latitude}&${position.coords.longitude}`)
+      })
+    }
+  }
+
   return (
     <div className="w-full h-full">
       <div className="flex flex-wrap w-full p-4 justify-between items-center">
@@ -92,7 +102,7 @@ export default function InfoAside ({ handleFunction }) {
                 </button>
             }
           </div>
-          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2"><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
+          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2" onClick={() => handleLocations()}><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
         </div>
       </div>
       {infoAsideData()}
