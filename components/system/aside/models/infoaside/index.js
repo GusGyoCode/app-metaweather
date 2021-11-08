@@ -1,10 +1,12 @@
 import moment from 'moment'
+import { useRouter } from 'next/router'
 import { useContext } from 'react'
 import Context from '../../../../../context/global/context'
 import Nube from '../../../../icons/nube'
 
 export default function InfoAside ({ handleFunction }) {
-  const { isDark, setIsDark, data } = useContext(Context)
+  const { isDark, setIsDark, data, convertTemp } = useContext(Context)
+  const router = useRouter()
   function infoAsideData () {
     if (data.length === 0) {
       return (
@@ -65,7 +67,7 @@ export default function InfoAside ({ handleFunction }) {
       </div>
       <div className="text-gray-400 grid -grd-cols-1 gap-10 md:gap-20 pb-8">
           <h2 className="text-8xl md:text-9xl text-center text-gray-300 dark:text-white">
-            {data[0].main.temp.toFixed(0)}<span className="text-4xl text-gray-400">°C</span>
+            {convertTemp ? ((data[0].main.temp * 1.8) + 32).toFixed(0) : data[0].main.temp.toFixed(0)}<span className="text-4xl text-gray-400">{convertTemp ? '°F' : '°C'}</span>
           </h2>
         <h3 className="text-4xl text-center font-bold">{data[0].weather[0].description}</h3>
         <h3 className="text-xl text-center">Today . {moment.unix(data[0].dt).format('Do MMMM')}</h3>
@@ -73,6 +75,14 @@ export default function InfoAside ({ handleFunction }) {
       </div>
       </>
       )
+    }
+  }
+
+  function handleLocations () {
+    if (typeof window !== 'undefined') {
+      navigator.geolocation.getCurrentPosition(function showPosition (position) {
+        router.push(`/weather/locations/${position.coords.latitude}&${position.coords.longitude}`)
+      })
     }
   }
 
@@ -92,7 +102,7 @@ export default function InfoAside ({ handleFunction }) {
                 </button>
             }
           </div>
-          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2"><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
+          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2 hint--bottom-left hint--rounded hint--bounce hint--medium" onClick={() => handleLocations()} disabled aria-label="Soon find location in real time...."><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
         </div>
       </div>
       {infoAsideData()}

@@ -21,12 +21,26 @@ const initialStateTranslate = () => {
   }
 }
 
+const initialStateLocations = () => {
+  if (typeof window !== 'undefined' && navigator !== 'undefined') {
+    if (storage.getItem('locations')) {
+      const locations = storage.getItem('locations')
+      return JSON.parse(locations)
+    } else {
+      storage.setItem('locations', JSON.stringify([]))
+      return []
+    }
+  }
+}
+
 const useGlobalState = () => {
   const [language, setLanguage] = useState(initialStateTranslate)
   const [isDark, setIsDark] = useState('dark')
   const [data, setData] = useState([])
   const [validation, setValidation] = useState(false)
   const [error, setError] = useState(false)
+  const [convertTemp, setConvertTemp] = useState(false)
+  const [savedLocations, setSavedLocations] = useState(initialStateLocations)
 
   const handleTranslate = e => {
     storage.setItem('language', e)
@@ -40,7 +54,7 @@ const useGlobalState = () => {
     handleTheme(isDark)
   }, [language, isDark])
 
-  return { language, setLanguage, isDark, setIsDark, data, setData, validation, setValidation, error, setError }
+  return { language, setLanguage, isDark, setIsDark, data, setData, validation, setValidation, error, setError, convertTemp, setConvertTemp, savedLocations, setSavedLocations }
 }
 
 export default useGlobalState

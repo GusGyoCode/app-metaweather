@@ -47,12 +47,13 @@ export async function getServerSideProps (constext) {
 }
 
 export default function city ({ info, extendInfo, errorr }) {
-  const { setData, setError, error } = useContext(Context)
+  const { setData, setError, error, savedLocations, setSavedLocations } = useContext(Context)
   const router = useRouter()
   const { id } = router.query
   useEffect(() => {
     console.log(errorr)
     errorr ? setError(!error) : setData([info, extendInfo])
+    setSavedLocations([...savedLocations, id])
   }, [id])
   return (
     <>
