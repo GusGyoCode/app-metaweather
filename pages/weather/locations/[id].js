@@ -36,7 +36,7 @@ export default function locations ({ extendInfo, errorr }) {
   const { id } = router.query
   useEffect(() => {
     axios.get('https://ipapi.co/json/').then(response => {
-      ipstack(response.data.ip, 'd68c081c3cd675c3311f9d7d27779a77', (err, responsesss) => {
+      ipstack(response.data.ip, process.env.API_KEY_IP, (err, responsesss) => {
         axios.get(`${process.env.API_URL}weather?q=${responsesss.city},${responsesss.country_code}&units=metric&appid=${process.env.API_KEY}`).then(responsess => {
           if (responsess.status === 200) {
             errorr ? setError(!error) : setData([responsess.data, extendInfo])

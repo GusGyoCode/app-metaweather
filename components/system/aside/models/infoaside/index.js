@@ -102,7 +102,7 @@ export default function InfoAside ({ handleFunction }) {
                 </button>
             }
           </div>
-          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2" onClick={() => handleLocations()}><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
+          <button className="p-2 bg-blue-light dark:bg-gray-400 text-white rounded-full hover:bg-blue-light-hover dark:hover:bg-gray-300 transition duration-500 ml-2 hint--bottom-left hint--rounded hint--bounce hint--medium" onClick={() => handleLocations()} disabled aria-label="Soon find location in real time...."><i className="icon-target block h-5 w-5 flex justify-center items-center"></i></button>
         </div>
       </div>
       {infoAsideData()}
