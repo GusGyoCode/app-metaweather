@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# APP Metaweather &middot; ![Release Status](https://img.shields.io/badge/release-v1.1.0-blue) [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
+This is a crafted website using [Tailwind CSS](https://tailwindcss.com) in a Next.js project.
 
-## Getting Started
+## :gear: Install it, run and config
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+```
+yarn
+yarn dev //from development
+yarn built //from production
+yarn start //from production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+.env 
+```
+API_KEY = API key from openweathermap
+API_URL = https://api.openweathermap.org/data/2.5/
+API_KEY_IP = API key from ipStack
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Deploy it to the cloud with [vercel](https://vercel.com) ([Documentation](https://vercel.com/docs)).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## :notebook_with_decorative_cover: Notes
 
-## Learn More
+It includes the following [Eslint](https://eslint.org/) plugins:
 
-To learn more about Next.js, take a look at the following resources:
+- [eslint from JavaScript Standard Style](https://standardjs.com/) - Adds stage 7+ features and autoprefixes
+- [connecting open weather map](https://api.openweathermap.org/) 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### :telescope: If you want to start from scratch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+:link: [Go to this site and follow the steps](https://nextjs.org/learn/basics/create-nextjs-app?utm_source=next-site&utm_medium=homepage-cta&utm_campaign=next-website)
 
-## Deploy on Vercel
+## :brain: Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*"Whoever loves discipline loves knowledge, but whoever hates correction is stupid."*
